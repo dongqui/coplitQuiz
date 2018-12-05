@@ -1,0 +1,4 @@
+const MAKE_NEW_IMAGE_CHOICE = 'Make new dockerImage';
+const MAKE_NEW_CLASS_CHOICE = 'Make new classRoom';
+const CHANGE_THE_QUIZ_TITLE = 'CHANGE_THE_QUIZ_TITLE';
+module.exports = {MAKE_NEW_IMAGE_CHOICE, MAKE_NEW_CLASS_CHOICE, CHANGE_THE_QUIZ_TITLE};

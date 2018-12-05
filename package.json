@@ -1,0 +1,24 @@
+{
+  "name": "coplitquiz",
+  "version": "1.0.0",
+  "description": "We need very strict folder structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "new": "node WeDontBelieveHuman/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dongqui/coplitQuiz.git"
+  },
+  "author": "codestates",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dongqui/coplitQuiz/issues"
+  },
+  "homepage": "https://github.com/dongqui/coplitQuiz#readme",
+  "dependencies": {
+    "inquirer": "^6.2.1",
+    "mkdirp": "^0.5.1"
+  }
+}
