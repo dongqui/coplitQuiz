@@ -1,12 +1,11 @@
 (async function() {
   try{
-    const folderTreeFactory = require('./util/folderTreeHandler');
+    const { makeQuizObj } = require('./util/folderTreeHandler');
     const inquirer = require('inquirer');
     const fs = require('./util/asyncFs');
     const { CHANGE_THE_QUIZ_TITLE } = require('./store/constStore');
 
-    let allQuizObj = await folderTreeFactory();
-    console.log(allQuizObj);
+    let allQuizObj = await makeQuizObj();
 
     const { dockerQuestion, newDockerQuestion, classQuestion, newClassQuestion, newQuiz,
       checkAnswer, checkAnswerAgain } = require('./store/questions')(allQuizObj);
@@ -30,6 +29,8 @@
       await fs.asyncWriteFile(descriptionFile);
       await fs.asyncWriteFile(testFile);
       await fs.asyncWriteFile(quizCodeFolder);
+
+      console.log('생성 완료!')
     }
   } catch (e) {
     console.log(e);
