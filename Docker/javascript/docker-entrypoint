@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cp -R /volume/coplitQuiz/data/$filePath/pre-commit.js /
+cp -R /volume/users/$userId/solution/${filePath}/code/. /code
+
+mocha pre-commit.js

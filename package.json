@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "new": "node WeDontBelieveHuman/index.js"
+    "setup": "./setup.sh",
+    "new": "node FolderFairy/index.js"
   },
   "repository": {
     "type": "git",
