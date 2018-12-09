@@ -1,6 +1,6 @@
 (async function() {
   try{
-    const folderTreeFactory = require('./util/folderTreeFactory');
+    const folderTreeFactory = require('./util/folderTreeHandler');
     const inquirer = require('inquirer');
     const fs = require('./util/asyncFs');
     const { CHANGE_THE_QUIZ_TITLE } = require('./store/constStore');

@@ -14,12 +14,21 @@ class Tree {
         .map(child => new Tree(`${this.filePath}/${child}`, child));
     }
   }
+  async makeFolderTree() {
+    await this.addChildren();
+    for (let i = 0; i < this.children.length; i++) {
+      let childTree = this.children[i];
+      await childTree.makeFolderTree();
+    }
+  }
 
-  dfs(cb) {
-    this.children.forEach(child => {
-      cb(child);
-      child.dfs(cb);
-    })
+
+  async dfs(cb) {
+    for (let i = 0; i < this.children.length; i++) {
+      let child = this.children[i];
+      await cb(child);
+      await child.dfs(cb);
+    }
   }
 
 }

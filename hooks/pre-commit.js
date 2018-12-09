@@ -1,8 +1,6 @@
 (async function() {
-  //const {classroomList, allQuizList, dockerimageList} = require('../FolderFairy/util/listFactory');
-  const folderTreeFactory = require('../FolderFairy/util/folderTreeFactory');
-  let allQuizObj = await folderTreeFactory();
-  console.log(allQuizObj);
+  const { makeQuizObj } = require('../FolderFairy/util/folderTreeHandler');
+  let allQuizObj = await makeQuizObj();
   let commitAddedData = process.argv.slice(2);
   let dataWithFlag = commitAddedData.filter(commit => commit.includes('flag'));
   for (let i = 0; i < dataWithFlag.length; i++) {
@@ -15,9 +13,9 @@
   async function checkIfQuizNameExist(data, allQuizObj) {
 
     let [addedDockerImage, addedClassRoom, addedQuiz] = data.slice(1, 4);
-    let dockerImageListWithOutAddedOne = dockerImageList.filter(dockerimage => dockerimage !== addedDockerImage);
+    let dockerImageListWithOutAddedOne = Object.keys(allQuizObj).filter(dockerimage => dockerimage !== addedDockerImage);
     let isDuplicated = dockerImageListWithOutAddedOne.some(dockerImage =>
-      allQuizObj[dockerImage][addedClassRoom] && allQuizObj[dockerImage][addedClassRoom][addedQuiz]);
+      allQuizObj[dockerImage][addedClassRoom] && allQuizObj[dockerImage][addedClassRoom].includes(addedQuiz));
     if (isDuplicated) {
       console.log(`
           커밋 실패!
