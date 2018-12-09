@@ -4,4 +4,4 @@ cd .git/hooks
 touch pre-commit
 touch pre-push
 cd ../..
-ln -s -f ../../hooks .git/hooks
+ln -s -f ././../hooks/pre-commit.sh .git/hooks/pre-commit
