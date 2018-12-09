@@ -2,6 +2,7 @@
   const {classroomList, allQuizList, dockerimageList} = require('../FolderFairy/util/listFactory');
   let commitAddedData = process.argv.slice(2);
   let dataWithFlag = commitAddedData.filter(commit => commit.includes('flag'));
+  console.log(dataWithFlag);
   for (let i = 0; i < dataWithFlag.length; i++) {
     let data = dataWithFlag[i].split('/');
     if (data.length === 5) {
