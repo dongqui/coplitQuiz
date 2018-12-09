@@ -1,5 +1,6 @@
 (async function() {
   const {classroomList, allQuizList, dockerimageList} = require('../FolderFairy/util/listFactory');
+  console.log('asdfasdf');
   let commitAddedData = process.argv.slice(2);
   let dataWithFlag = commitAddedData.filter(commit => commit.includes('flag'));
   for (let i = 0; i < dataWithFlag.length; i++) {
